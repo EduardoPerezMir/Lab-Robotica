@@ -41,7 +41,7 @@ Respuesta: Los sensores tienen la función de percibir y captar información del
 
 2. ¿Cómo se puede estimar la velocidad sin encoders?
 
-Respuesta: Se estima de forma manual, registrando la posición inicial en un tiempo inicial, y la posición final en un tiempo final. 
+Respuesta: Se estima de forma manual, registrando la posición inicial en un tiempo inicial, y la posición final en un tiempo final. Así, la velocidad puede calcularse con la siguiente fórmula:
 
 ![image](https://github.com/user-attachments/assets/cf4eb19e-e3d6-4433-aa39-66c01a1036a6)
 
