@@ -63,7 +63,14 @@ R: Sin encoders, incluso con control de velocidad, no se puede asegurar que el r
 ---
 
 ## Documentación Parte 1
+1. Explicacion y conexion correcta de componentes
+   
+   ![Imagen de WhatsApp 2025-05-01 a las 18 02 06_eaf9633d](https://github.com/user-attachments/assets/37133b2c-4429-4564-9e2c-df23f1bb76b7)
 
+    La tabla muestra cómo cada sensor y actuator del robot se conecta al Arduino: los módulos I²C (IMU MPU-9250/6500 y TCS34725 RGB) usan las líneas SCL/SDA en pines analógicos para comunicarse, compartiendo un bus; el driver L298N controla dos motores DC con señales digitales y PWM separadas para velocidad (enA/enB) y dirección (in1–in4), alimentando la lógica desde el Arduino y los motores desde una batería externa; el HC-SR04 emplea dos pines digitales (Trigger/Echo) para medir distancia por ultrasonido; y el microservo SG90 recibe su señal PWM en D11, con alimentación 5 V. Todas las tierras (GND) están comúnmente referenciadas para garantizar lecturas fiables y reducir ruido eléctrico.
+
+    Se utilizó un protoboard como nodo común de distribución de alimentación: en él se agruparon todas las conexiones de GND (Arduino, L298N, sensores y servo) y el positivo de la batería motriz, de modo que cada módulo pudiera tomar fácilmente tierra y alimentación sin cableado disperso, asegurando un montaje ordenado y una referencia eléctrica estable.
+  
 ---
 
 ## Preguntas Resueltas Parte 2
