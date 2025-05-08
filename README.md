@@ -29,6 +29,7 @@ Objetivos:
    
 
 ## Resumen del Proyecto
+En este proyecto se ensambló y programó un robot móvil básico controlado por un Arduino UNO, utilizando dos motores DC, un driver L298N y sensores como el ultrasónico HC-SR04 y el IMU MPU-6050. El objetivo fue implementar control de movimiento sin encoders, estimando la velocidad mediante intervalos de tiempo y modulación PWM. Se probaron funciones de avance, retroceso y giros, y se documentaron tanto los esquemas de conexión como los resultados prácticos. El sistema fue alimentado por una batería de 9V y un portapilas de 4 AA, logrando un funcionamiento autónomo básico con posibles mejoras futuras en la fuente de energía y uso del IMU.
 
 ---
 
@@ -90,16 +91,20 @@ Tabla 2:
 ● Se utilizó una fuente de alimentación de 4 pilas AA de 1.5V encajadas en un portapilas 4x de pilas AA en serie para hacer funcionar a todo el sistema (Driver L298N, Arduino UNO, 2 Motores DC, Sensor IMU & Sensor Ultrasónico).
 
 
-2. Implementación del control de motores
-  ● Se realizó una prueba de movimientos básicos de los motores (hacia atrás, hacia adelante, hacer giro hacia la derecho y hacia la izquierda).
+2. Implementación del control de motores:
+Se realizó una prueba de movimientos básicos de los motores (hacia atrás, hacia adelante, hacer giro hacia la derecho y hacia la izquierda) a velocidad estándar, sin controlar la velocidad.
 
 Link de Vídeo Realizado, en YouTube:
-    https://www.youtube.com/watch?v=_Qw2k2AOFzI
+  https://www.youtube.com/watch?v=zlGT86RPtvo
 
 
-3. Implementación y prueba de control de velocidad por intervalos de tiempo.
+3. Implementación y prueba de control de velocidad por intervalos de tiempo:
+Se realizó una prueba donde hubo control de velocidad por intervalos de tiempo, variando las velocidades y los tiempos.
 
-4. Respuesta a las preguntas teóricas y análisis de mejoras
+Link de Vídeo Realizado, en YouTube:
+https://www.youtube.com/watch?v=EAuy5xxCZF4
+
+5. Respuesta a las preguntas teóricas y análisis de mejoras
 Las respuestas a las preguntas teóricas se encuentran en la sección de [Preguntas resueltas Parte 1](#preguntas-resueltas-parte-1).
 A continuación se describe un análisis de mejoras:
 Hubo problemas prácticos al momento de hacer andar los dos motores de forma simultánea. Sin embargo, logramos hacerlos andar con la batería rectangular de 9v proporcionada inicialmente en el kit, luego de comprobar conexiones repetida y sistemáticamente. Adicionalmente, para hacer funcionar a todo el sistema, consideramos un portapilas 4x de pilas AA en serie, donde van puestas 4 pilas AA de 1.5V. De esta manera, el sistema robótico propuesto en este laboratorio puede funcionar sin ninguna otra fuente de alimentación. Como posible mejora a nuestro trabajo, proponemos el uso de una fuente de alimentación más robusta y estable, como una batería Li-ion recargable de 7.4V (2 celdas). Además, considerar que luego de realizado el laboratorio, se presentó la pérdida de uno de los Jumpers del Driver L298N, por lo que se considera adquirir otro Jumper para reponerlo.
@@ -128,5 +133,9 @@ Respuesta: La inclinación o giro puede desviar al robot de su trayectoria. El I
 ---
 
 ## Documentación Parte 2
+1. Respuesta a las preguntas teóricas y análisis de mejoras
+Las respuestas a las preguntas teóricas se encuentran en la sección de [Preguntas resueltas Parte 1](#preguntas-resueltas-parte-2).
+A continuación se describe un análisis de mejoras:
+Nos faltó terminar la parte del IMU. Por lo que, ese aspecto quedó por mejorar en esta entrega.
 
 ---
