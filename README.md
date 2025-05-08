@@ -43,6 +43,7 @@ Respuesta: Los sensores tienen la función de percibir y captar información del
 Respuesta: Se estima de forma manual, registrando la posición inicial en un tiempo inicial, y la posición final en un tiempo final. Así, la velocidad puede calcularse con la siguiente fórmula:
 
 ![image](https://github.com/user-attachments/assets/cf4eb19e-e3d6-4433-aa39-66c01a1036a6)
+
 Esta estimación puede hacerse:
 - Visualmente (marcando una regla o cinta métrica en el suelo, y cronometrar el desplazamiento total).
 - Usando sensores (como el IMU para detectar desplazamiento angular o aceleración).
