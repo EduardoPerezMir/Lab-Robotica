@@ -1,6 +1,6 @@
-# Laboratorio-1-Robótica-y-Sistemas-Autónomos
+# Laboratorio 1 Robótica y Sistemas Autónomos
 
-# Presentado por:
+# Integrantes:
 - Claudio Cabello
 - David Martínez
 - Eduardo Pérez
@@ -66,7 +66,10 @@ R: Sin encoders, incluso si se implementa un control de velocidad utilizando té
 
 ## Documentación Parte 1
 1. Explicacion y conexion correcta de componentes
+
+Esquema de Conexiones Principales
 ![Esquema de Conexiones General](https://github.com/user-attachments/assets/0cdd423b-ada2-498e-993b-fdcc8e5ad339)
+
 
 ● La imagen muestra las conexiones, que efectivamente fueron realizadas en nuestro trabajo, entre: 
   - El motor A conectado a los pines de OUT1, OUT2 del Driver L298.
@@ -79,8 +82,12 @@ R: Sin encoders, incluso si se implementa un control de velocidad utilizando té
 ● Por último, con un cable se conectó el pin de 5V del Driver L298N con el pin de 5V de Arduino UNO.
 
 Tabla  1:
+
 ![Conexiones Sensor IMU](https://github.com/user-attachments/assets/8b0cb859-281d-43b2-9176-f318de10a7d2)
-Tabla 2: 
+
+
+Tabla 2:
+
 ![Conexiones Sensor Ultrasonico](https://github.com/user-attachments/assets/c16c1f7b-45a0-4da9-ae3c-c15f9bda92dd)
 
 ● La tabla 1 muestra cómo el sensor IMU se conecta a Arduino UNO: El sensor IMU utiliza los pines analógicos SDA & SLC.
@@ -134,7 +141,7 @@ Respuesta: La inclinación o giro puede desviar al robot de su trayectoria. El I
 
 ## Documentación Parte 2
 1. Respuesta a las preguntas teóricas y análisis de mejoras
-Las respuestas a las preguntas teóricas se encuentran en la sección de [Preguntas resueltas Parte 1](#preguntas-resueltas-parte-2).
+Las respuestas a las preguntas teóricas se encuentran en la sección de [Preguntas resueltas Parte 2](#preguntas-resueltas-parte-2).
 A continuación se describe un análisis de mejoras:
 Nos faltó terminar la parte del IMU. Por lo que, ese aspecto quedó por mejorar en esta entrega.
 
