@@ -144,13 +144,7 @@ Respuesta: La inclinación o giro puede desviar al robot de su trayectoria. El I
 Respuesta a las preguntas teóricas y análisis de mejoras. 
 Sumado a las conexiones realizadas entre el Arduino, el driver L298N, los motores DC y el pack de pilas descritas en la Parte 1, se añaden nuevas conexiones correspondientes al sensor infrarrojo y al sensor IMU, resultando en el siguiente esquema de conexiones:
 
-Esquema de Conexiones Principales
-
-![Conexiones IMU HC-SR04](https://github.com/user-attachments/assets/a50ed15d-5fef-4822-a91b-dadd70f1e723)
-
-
 ● Conexiones para sensor MPU6050 (IMU - giroscopio)
-  El MPU6050 usa comunicación I2C, así que los pines son fijos:
   - VCC → 5V del Arduino
   - GND → GND del Arduino
   - SCL → A5 del Arduino
@@ -163,7 +157,11 @@ Esquema de Conexiones Principales
   - Trig → Pin 9 del Arduino
   - Echo → Pin 8 del Arduino
 
-1. 
+1. Los códigos se encuentran disponibles en el repositorio con la lógica ya implementada. Los archivos correspondientes llevan por nombre "03_Prueba_Ultrasonico.ino" y "04_Prueba_de_Velocidades.ino".
+
+El archivo relacionado con el sensor ultrasónico está diseñado para medir distancias: el sensor emite una señal sonora, espera a que esta rebote en un objeto y regrese como un eco, y luego mide el tiempo que tarda en volver. Con esta información, calcula y muestra la distancia en consola.
+
+En cuanto al control de velocidades, este se realiza mediante una técnica llamada modulación por ancho de pulso (PWM). A través de pulsos de diferente duración, se regula la energía entregada a los motores, lo que permite ajustar su velocidad con precisión.
 
 2. 
    
