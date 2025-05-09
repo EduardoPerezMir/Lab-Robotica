@@ -163,9 +163,11 @@ El archivo relacionado con el sensor ultrasónico está diseñado para medir dis
 
 En cuanto al control de velocidades, este se realiza mediante una técnica llamada modulación por ancho de pulso (PWM). A través de pulsos de diferente duración, se regula la energía entregada a los motores, lo que permite ajustar su velocidad con precisión.
 
-2. 
+2. Lo que se realiza para corregir la dirección es leer constantemente los datos de aceleración y rotación del dispositivo para conocer su orientación actual en el espacio. Con esta información, se calcula el ángulo de inclinación y la dirección en la que está orientado. Luego, se compara esa orientación con la posición deseada (por ejemplo, mantenerse recto y apuntando hacia adelante). Si hay alguna desviación, se determina cuánto y hacia dónde corregir, y se envía una orden a los motores o actuadores para ajustar la posición.
    
 3. Las respuestas a las preguntas teóricas se encuentran en la sección de [Preguntas resueltas Parte 2](#preguntas-resueltas-parte-2).
+
+- Respecto a las mejoras se puede considerar es un filtrado de datos ya que los datos crudos del IMU suelen tener ruido. Una mejora importante es aplicar filtros como el filtro de Kalman.
 
 
 ---
