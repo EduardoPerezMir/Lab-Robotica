@@ -143,7 +143,23 @@ Respuesta: La inclinación o giro puede desviar al robot de su trayectoria. El I
 ## Documentación Parte 2
 1. Respuesta a las preguntas teóricas y análisis de mejoras
 Las respuestas a las preguntas teóricas se encuentran en la sección de [Preguntas resueltas Parte 2](#preguntas-resueltas-parte-2).
-A continuación se describe un análisis de mejoras:
-Nos faltó terminar la parte del IMU. Por lo que, ese aspecto quedó por mejorar en esta entrega.
+
+Sumado a las conexiones realizadas entre el Arduino, el driver L298N, los motores DC y el pack de pilas descritas en la Parte 1, se añaden nuevas conexiones correspondientes al sensor infrarrojo y al sensor IMU, resultando en el siguiente esquema de conexiones:
+
+Esquema de Conexiones Principales
+
+● Conexiones para sensor MPU6050 (IMU - giroscopio)
+  El MPU6050 usa comunicación I2C, así que los pines son fijos:
+  - VCC → 5V del Arduino
+  - GND → GND del Arduino
+  - SCL → A5 del Arduino
+  - SDA → A4 del Arduino
+
+● Conexiones para sensor HC-SR04 (ultrasónico)
+  Este sensor usa pines digitales:
+  - VCC → 5V del Arduino
+  - GND → GND del Arduino
+  - Trig → Pin 9 del Arduino
+  - Echo → Pin 8 del Arduino
 
 ---
