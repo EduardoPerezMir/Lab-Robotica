@@ -1,9 +1,9 @@
 # Laboratorio 1 Robótica y Sistemas Autónomos
 
 # Integrantes:
-- Claudio Cabello
-- David Martínez
-- Eduardo Pérez
+- Claudio Ignacio Cabello Vásquez
+- David Samuel Martínez Canto
+- Eduardo Andrés Pérez Miranda
   
 # Laboratorio 1
 ## Tema: Ensamblar y programar un robot básico.
@@ -149,22 +149,16 @@ Sumado a las conexiones realizadas entre el Arduino, el driver L298N, los motore
   - SCL → A5 del Arduino
   - SDA → A4 del Arduino
 
-● Conexiones para sensor HC-SR04 (ultrasónico)
-  Este sensor usa pines digitales:
-  - VCC → 5V del Arduino
-  - GND → GND del Arduino
-  - Trig → Pin 9 del Arduino
-  - Echo → Pin 8 del Arduino
-
-1. Los códigos se encuentran disponibles en el repositorio con la lógica ya implementada. Los archivos correspondientes llevan por nombre "03_Prueba_Ultrasonico.ino" y "04_Prueba_de_Velocidades.ino".
-
-El archivo relacionado con el sensor ultrasónico está diseñado para medir distancias: el sensor emite una señal sonora, espera a que esta rebote en un objeto y regrese como un eco, y luego mide el tiempo que tarda en volver. Con esta información, calcula y muestra la distancia en consola.
-
-Link del vídeo de prueba sensor ultrasónico, en Youtube: https://youtube.com/shorts/Qjm8yOypSc4?feature=shared
+1.El código se encuentra disponible en el repositorio con la lógica ya implementada. El archivo correspondiente lleva por nombre "04_Prueba_de_Velocidades.ino".
 
 En cuanto al control de velocidades, este se realiza mediante una técnica llamada modulación por ancho de pulso (PWM). A través de pulsos de diferente duración, se regula la energía entregada a los motores, lo que permite ajustar su velocidad con precisión.
 
-2. Lo que se realiza para corregir la dirección es leer constantemente los datos de aceleración y rotación del dispositivo para conocer su orientación actual en el espacio. Con esta información, se calcula el ángulo de inclinación y la dirección en la que está orientado. Luego, se compara esa orientación con la posición deseada (por ejemplo, mantenerse recto y apuntando hacia adelante). Si hay alguna desviación, se determina cuánto y hacia dónde corregir, y se envía una orden a los motores o actuadores para ajustar la posición.
+Por otro lado, el archivo "05_cinematica_diferencial.ino" implementa un sistema de cinemática diferencial para controlar los motores del robot y estimar su posición en función del tiempo y la velocidad de las ruedas. En este código, se calcula el movimiento del robot utilizando la información de los motores y la velocidad de rotación de las ruedas. Se emplea un modelo simple de cinemática para actualizar la posición del robot según el tiempo transcurrido y la velocidad de los motores, estimando la trayectoria en un plano cartesiano.
+
+Finalmente, el archivo "06_Registrar_DesviacionesIMU.ino" registra y muestra las desviaciones de orientación del robot utilizando el sensor IMU. A través de las lecturas del giroscopio y el acelerómetro, el código monitorea el giro del robot, mostrando en tiempo real las desviaciones angulares. Este archivo es útil para obtener datos sobre cómo el robot se desplaza y detectar cualquier cambio en su dirección, lo cual es esencial para análisis posteriores de la precisión del movimiento y el rendimiento del sistema de corrección.
+
+
+2. El archivo 07_correccion_con_imu.ino implementa un sistema de ajuste dinámico de la dirección del robot en tiempo real, utilizando un sensor IMU para medir la inclinación y el giro del robot. En este código, se lee constantemente la orientación del robot a través del giroscopio del IMU. Si el robot se desvía de su trayectoria recta (detectando inclinación o giro no deseado), se aplican correcciones en la dirección de los motores para ajustar la orientación del robot y mantenerlo recto. La lógica de corrección se basa en el valor del giro en el eje Z, y dependiendo de si el robot se desvía hacia la derecha o hacia la izquierda, se ajustan los motores para corregir la trayectoria. Este sistema de corrección de inclinación permite que el robot se mueva de manera más precisa, corrigiendo su orientación en tiempo real.
    
 3. Las respuestas a las preguntas teóricas se encuentran en la sección de [Preguntas resueltas Parte 2](#preguntas-resueltas-parte-2).
 
