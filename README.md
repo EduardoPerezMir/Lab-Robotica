@@ -141,12 +141,13 @@ Respuesta: La inclinación o giro puede desviar al robot de su trayectoria. El I
 ---
 
 ## Documentación Parte 2
-1. Respuesta a las preguntas teóricas y análisis de mejoras
-Las respuestas a las preguntas teóricas se encuentran en la sección de [Preguntas resueltas Parte 2](#preguntas-resueltas-parte-2).
-
+Respuesta a las preguntas teóricas y análisis de mejoras. 
 Sumado a las conexiones realizadas entre el Arduino, el driver L298N, los motores DC y el pack de pilas descritas en la Parte 1, se añaden nuevas conexiones correspondientes al sensor infrarrojo y al sensor IMU, resultando en el siguiente esquema de conexiones:
 
 Esquema de Conexiones Principales
+
+![Conexiones IMU HC-SR04](https://github.com/user-attachments/assets/a50ed15d-5fef-4822-a91b-dadd70f1e723)
+
 
 ● Conexiones para sensor MPU6050 (IMU - giroscopio)
   El MPU6050 usa comunicación I2C, así que los pines son fijos:
@@ -161,5 +162,35 @@ Esquema de Conexiones Principales
   - GND → GND del Arduino
   - Trig → Pin 9 del Arduino
   - Echo → Pin 8 del Arduino
+
+1. El algoritmo implementado permite al robot reaccionar en tiempo real frente a estímulos del entorno.
+
+En primer lugar, detecta si hay un objeto muy cerca del robot mediante la medición de la distancia frontal, utilizando un sensor ultrasónico. En este caso, se aplica la siguiente lógica:
+SI la distancia al obstáculo es menor que un cierto valor en nuestro caso 10 cm,
+ENTONCES el robot se detiene y gira para esquivarlo.
+SI NO hay obstáculos,
+ENTONCES continúa avanzando.
+
+En cuanto a la detección de colores, el sistema identifica colores presentes en el entorno y toma decisiones en función del color detectado (rojo, verde u otro). La lógica correspondiente es la siguiente:
+SI el color detectado es rojo,
+ENTONCES el robot se detiene.
+SI el color detectado es verde,
+ENTONCES avanza.
+SI NO se reconoce el color,
+ENTONCES el robot espera o permanece inactivo, lo que se indica mediante la iluminación del LED en color azul.
+
+2. El umbral se utiliza para detectar si hay un objeto cerca del robot. La lógica implementada es la siguiente:
+SI la distancia es menor que umbral entonces
+    Detener motores
+    Girar derecha
+SINO
+    Avanzar
+
+3. Las pruebas del sensor infrarrojo se pueden apreciar en el siguiente video, donde se muestra por consola las distancias que este registra en tiempo real. Aquí el enlace:
+  
+4. Para mejorar la detección, una opción es calibrar dinámicamente los umbrales en función del entorno, o implementar filtros de promedio móvil para reducir el ruido de las lecturas. También sería útil explorar sensores complementarios como cámaras.
+   
+5. Las respuestas a las preguntas teóricas se encuentran en la sección de [Preguntas resueltas Parte 2](#preguntas-resueltas-parte-2).
+
 
 ---
